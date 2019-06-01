@@ -1,6 +1,9 @@
 # datastd
 datastd - library of base structures for C lang
 
+# PRE
+use build.sh --help for flags info
+
 # 1. Build
 use build.sh for building libdatastd.a static library. 
 All build artifacts can be found in corresponding build dir.
