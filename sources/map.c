@@ -51,6 +51,7 @@ void Map_Set(Map *map, const char *key, size_t key_size, void *value) {
 }
 
 static BucketNode* findBucketNode(Map *map, const char *key, size_t key_size) {		
+	BucketNode *result = NULL;
 	List *bucket = getBucketByKey(map, key, key_size);
 
 	Iterator *bucketIterator = CREATE_ITERATOR(List);
@@ -60,12 +61,14 @@ static BucketNode* findBucketNode(Map *map, const char *key, size_t key_size) {
 		if (bucketNode->key_size == key_size) {
 			int cmp_result = memcmp(bucketNode->key, key, key_size);
 			if (cmp_result == 0) {
-				return bucketNode;
+				result = bucketNode;
+				break;
 			}	
 		}			
 	}
 
-	return NULL;
+	FREE_ITERATOR(List, bucketIterator);
+	return result;
 }
 
 void* Map_Get(Map *map, const char *key, size_t key_size) {

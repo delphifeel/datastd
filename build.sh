@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILES="heap list map memory q slice"
+FILES="heap list map memory q slice str_holder"
 SRC_DIR="sources"
 BUILD_DIR="build"
 INCLUDE_DIR="include"

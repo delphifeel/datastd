@@ -61,7 +61,7 @@ void Slice_Free(Slice *slice) {
 
 void Slice_Append(Slice *slice, void *valuePtr) {
 	if (slice->len == slice->cap) {
-		uint32_t newCap = CALC_NEW_ARR_SIZE(slice->cap);
+		uint32_t newCap = slice->cap * 2 + 1;
 		uint32_t newArraySize = (slice->startIndex + newCap) * POINTER_SIZE;
 		slice->parentArray = Memory_Realloc(slice->parentArray, newArraySize);
 		slice->cap = newCap;

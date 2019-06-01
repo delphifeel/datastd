@@ -4,10 +4,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define DEFAULT_ARRAY_SIZE (10)
 #define POINTER_SIZE       (sizeof(void*))
-
-#define CALC_NEW_ARR_SIZE(_OLD_SIZE) (_OLD_SIZE * 2 + 1)
 
 typedef int32_t (*ParseElementValueFunc)(void *elementPtr);
 

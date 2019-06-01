@@ -3,8 +3,9 @@
 
 #include <stdint.h>
 
-#define FROM_START (0)
-#define TO_THE_END (UINT32_MAX)
+#define DEFAULT_ARRAY_SIZE	(10)
+#define FROM_START 		(0)
+#define TO_THE_END 		(UINT32_MAX)
 
 typedef struct Slice Slice;
 
